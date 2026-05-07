@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+	int data;
+	struct node*l;
+	struct node*r;
+};
+struct node* create(int val){
+	struct node*r=(struct node*)malloc(sizeof(struct node));
+	r->data=val;
+	r->r=NULL;
+	r->l=NULL;
+	return r;
+}
+int main(){
+	struct node*p=create(4);
+	struct node*p1=create(3);
+	struct node*p2=create(2);
+	struct node*p3=create(1);
+	struct node*p4=create(5);
+	struct node*p5=create(6);
+	struct node*p6=create(7);
+	p->l=p2;
+	p2->l=p3;
+	p2->r=p1;
+	p->r=p5;
+	p5->l=p4;
+	p5->r=p6;
+	
+}
